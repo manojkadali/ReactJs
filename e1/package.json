@@ -1,0 +1,30 @@
+{
+  "name": "reactjs_main",
+  "version": "1.0.0",
+  "description": "React js reactme file",
+  "homepage": "https://github.com/manojkadali/ReactJs#readme",
+  "bugs": {
+    "url": "https://github.com/manojkadali/ReactJs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojkadali/ReactJs.git"
+  },
+  "license": "ISC",
+  "author": "manoj kadali",
+  "type": "commonjs",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
