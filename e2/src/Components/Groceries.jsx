@@ -1,0 +1,10 @@
+const Groceries=()=>{
+    return (
+        <h1>{" "}
+        Our grocery online store and we have alot of child components inside this webpage !!!
+        </h1>
+
+    );
+};
+
+export default Groceries;

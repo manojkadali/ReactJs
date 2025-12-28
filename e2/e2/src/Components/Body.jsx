@@ -1,8 +1,7 @@
-import RestroCard,{PromoRestroCard} from "./RestroCard";
+import RestroCard from "./RestroCard";
 import { resObj } from "../utilis/mockdata";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
-import useOnlineStatus from "../utilis/CustomHooks/useOnlineStatus";
 
 const Body=()=>{
     const [listOfRestaurents,SetListOfRestaurents]=useState([]);
@@ -15,7 +14,7 @@ const Body=()=>{
 
 
     const fetchData= async ()=>{
-        const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9749803&lng=77.58348749999999&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null");//fetch will return a promise
+        const data=await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9749803&lng=77.58348749999999&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null");//fetch will return a promise
         //fetch gives promise, here it is succcess to it given the raw response object not a ready to use json object . data contains some metadata 
         const json=await data.json();
         
@@ -34,12 +33,6 @@ const Body=()=>{
     // showing loading is a very old practice
     // if(listOfRestaurents.length===0) return <Shimmer/>
     
-    //CHECKING ONLINE STATUS
-    const Status=useOnlineStatus();
-    if(Status===false) return <h1>Looks like You re offline!!!</h1>;
-
-    const PromoRestro=PromoRestroCard(RestroCard);
-
     return (listOfRestaurents.length===0) ? (<Shimmer/>):( 
     <div className="Body">
        
@@ -80,10 +73,7 @@ const Body=()=>{
             */}
             {/* we can loop through the elements presen in the resObj , using map or for loop  */}
             
-            {filteredRes.map((restaurent)=> (restaurent.card.card.info.promoted ? 
-                                    <PromoRestro key={restaurent.card.card.info.id} resData={restaurent?.card?.card?.info}/> : <RestroCard key={restaurent.card.card.info.id} resData={restaurent?.card?.card?.info}/>)
-                    )} {/*optional chaining */}
-                    {/* key={restaurent.card.card.info.id} */}
+            {filteredRes.map((restaurent)=> <RestroCard key={restaurent.card.card.info.id} resData={restaurent?.card?.card?.info}/>)} {/*optional chaining */}
 
         </div>
     </div>

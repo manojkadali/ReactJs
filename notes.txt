@@ -1,0 +1,104 @@
+//components : componenets re independent and reuable bits of code. they serve the same purpose as javascript functions, but woek in isolation and retuen HTML
+/*--> in react everything is based on functional component or class based component
+ */
+//syntax of functional component:
+
+// function Compone() {
+//   // !st letter is always a captial and this should return the jsx
+//   return <div>Component</div>;
+// }
+// export default Compone;
+
+/*-->  JSX(js xml): jsx allows us to wtite HTML in react JSX makes it easier to write and add HTML in react
+-> the html code which is present in the js will be compiled into the js code, it can to seen thorugh babel.com website
+*/
+
+// function App() {
+//   return (
+//     <section>
+//       <p>
+//         when we are returning more than one tag then it should be weapped in a
+//         single tag like section or div
+//       </p>
+//       <article>hello</article>
+//     </section>
+//   );
+// }
+
+//-->Expressions in JSX: expressions inside curly braces. it can a react varaible, or propertu, or any other valid javascript expression JSX will excute the expression and return the result.
+// const myName = "manoj";
+// const multi = (a, b) => {
+//   a * b;
+// };
+// const specialClass = "simple-class";
+// function Component() {
+//   return (
+//     <>
+//       {/*rendering varible vlues*/}
+//       <h1>{myName}</h1>
+
+//       <p>2+2={2 + 2}</p>
+ 
+//       <p>my friends list:{["Alex", "joh", "jardan"]}</p>
+
+//       <p>2*2{multi(2, 2)}</p>
+
+//       <p className={specialClass}>this is the special class</p>
+//     </>
+//   );
+// }
+
+//--> Lists: in react, we will render lists with some type of loop. the javascirpt map() array method is generally the preferred method.
+
+//props/ properties": props are arguments passed into react components, props are passed to componenets via HTML attributes.
+
+//conditional rendering: conditional rendering in react works the same way conditions work in javascript. use javascript, 
+//                       use js operaters like if to create elements represting the current state and let react update the ui to the match them.
+
+// to use CSS in the jsx we have to use {{}}
+
+// to install bootstrap in react:
+/*  npm install react-bootstrap bootstrap
+place this import statement in the index.js file which is the main file present in the src folder
+import 'bootstrap/dist/css/bootstrap.min.css
+*/
+
+/* State :- the state is a built-in react object that is used to contain data or information about the component .
+           A componeents state can change over time , whenever it changes, the component re-renders.
+
+hooks : hooks are new addition in react 16.8 , they let you use state and other react features withour writing a class.
+
+useState() hook: the react useState hook allows us to tract state in a function component.State generally refers to data or properties that need to be tracking in a application.
+ */
+
+/* handling Forms in React js :- in general form having a function in js it will handling them,
+                      But in REACT JS,one mutable state is kept in state of a component and only updated with using a usestate hooks.
+
+useEffect() : the useEffect hook allows you to perform side effects in your components.
+           ex: fetching data, directly updating the DOm
+*/
+
+/* Prop drilling : if a data from component a is passed to component c, if there is a component b is in between then, the data is passed through the component b , w
+                    which is not a good practice.
+-->to solve that solution is to use Context API , and the optimal approach is useContext();
+
+Context API : import (createContext)
+              creating a instance of (createContext)
+              wrap that data into provider compoenet
+              consumer methos will allow to consume data which is provided by the provider
+
+Context Hook : useContext()
+ react context is a way to manage state globally it can be used to together with te suestate hook to chare state between deeplu nested components more easily than with usestate alone.
+*/
+
+/* useReducer() : usereducer is a hook in react that is similar to usestate,but it is desinged for more complx state objects or state transitions
+                    that involve multiple sub-values. ita llows you to manage stte in a functional, immutable way.
+    state: 
+    dispatch: [value,setValue] dispatch is kind of setvalue form useState
+    reducer: custome state logic ,    
+    intitalState={}         
+
+    useRef() :- use ref os a hook in react that allows you to access the properties of a DOM element. it is uesd when you need to access,
+                the value of an element, or the current dimensions of an element.
+
+

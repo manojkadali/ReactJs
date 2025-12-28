@@ -1,4 +1,4 @@
- .header{
+.header{
     display: flex;
     justify-content: space-between;
     border: 2px ;
@@ -7,7 +7,7 @@
 }
  
 .logo{
-    
+    /* padding: 20px; */
     margin-left: 20px;
     border-radius: 50%;
     width:100px;
@@ -19,7 +19,7 @@
 .navItems>ul{
     font-size: 24px;
     display: flex;
-    
+    /* padding:0px 20px; */
     list-style-type: none;
 }
  
@@ -28,6 +28,7 @@
     padding: 10px;
 }
 
+/* ----------------------------------body------------------ */
 .search{
     padding:10px;
 }
@@ -68,5 +69,4 @@
 
 .filter{
     display: flex;
-} 
- @import "tailwindcss";
+}

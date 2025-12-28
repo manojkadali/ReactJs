@@ -22,7 +22,7 @@ const Address=()=>{
 }
 const Footer=()=>{
     return(
-        <div style={{borderTop:"2px solid Grey",  marginTop: "auto"}} >
+        <div style={{borderTop:"2px solid Grey"}} >
             <div style={{justifyContent: "space-between",display:"flex"}}>
                 <Links/>
                 <Address/>
